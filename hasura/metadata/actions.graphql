@@ -1,32 +1,30 @@
 type Mutation {
-  Login (
-    name: String!
-    password: String!
-    captcha: String
-  ): JsonWebToken
+  echo (
+    message: String!
+  ): EchoOutput
 }
 
 type Mutation {
-  Logout : LogoutResponse
+  register (
+    affiliation: String
+    bracket: String
+    country: String
+    email: String
+    name: String
+    password: String
+    website: String
+  ): RegisterOutput
 }
 
 type Mutation {
-  Signup (
-    name: String!
-    password: String!
-    captcha: String
-  ): CreateUserOutput
-}
-
-type Mutation {
-  SubmitAttemptMutation (
-    challenge_id: Int
-    provided: String
+  submit (
+    challenge_id: Int!
+    provided: String!
   ): SubmitAttemptMutationOutput
 }
 
 type Mutation {
-  UnlockMutation (
+  unlock (
     target: Int
     type: String
   ): UnlockMutationOutput
@@ -67,5 +65,18 @@ type SubmitMutationOutput {
 
 type SubmitAttemptMutationOutput {
   id : Int!
+}
+
+type RegisterOutput {
+  id : Int!
+  token : String!
+}
+
+type HelloOutput {
+  message : String!
+}
+
+type EchoOutput {
+  message : String!
 }
 
