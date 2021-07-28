@@ -1,0 +1,19 @@
+model:
+  package: gen
+  filename: gen/gql_server_model.go
+exec:
+  package: gen
+  filename: gen/gql_server_exec.go
+models:
+  Int:
+    model: github.com/99designs/gqlgen/graphql.Int64
+  Date:
+    model: github.com/99designs/gqlgen/graphql.Time
+  bigint:
+    model: github.com/99designs/gqlgen/graphql.Int64
+  timestamptz:
+    model: github.com/99designs/gqlgen/graphql.Time
+  timestamp:
+    model: github.com/99designs/gqlgen/graphql.Time
+schema:
+  - schema.graphql

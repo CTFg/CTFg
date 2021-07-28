@@ -1,39 +1,4 @@
-actions:
-- name: Login
-  definition:
-    kind: synchronous
-    handler: http://host.docker.internal:3000
-    forward_client_headers: true
-  permissions:
-  - role: ctfd_user
-  - role: ctfd_admin
-  - role: ctfd_
-- name: Logout
-  definition:
-    kind: synchronous
-    handler: http://localhost:3000
-    forward_client_headers: true
-  permissions:
-  - role: ctfd_user
-  - role: ctfd_admin
-- name: Signup
-  definition:
-    kind: synchronous
-    handler: http://host.docker.internal:3000
-    forward_client_headers: true
-- name: SubmitAttemptMutation
-  definition:
-    kind: synchronous
-    handler: http://host.docker.internal:3000
-    forward_client_headers: true
-- name: UnlockMutation
-  definition:
-    kind: synchronous
-    handler: http://host.docker.internal:3000
-    forward_client_headers: true
-  permissions:
-  - role: ctfd_user
-  - role: ctfd_admin
+actions: []
 custom_types:
   enums: []
   input_objects: []
@@ -74,4 +39,7 @@ custom_types:
   - name: LogoutResponse
   - name: SubmitMutationOutput
   - name: SubmitAttemptMutationOutput
+  - name: RegisterOutput
+  - name: HelloOutput
+  - name: EchoOutput
   scalars: []

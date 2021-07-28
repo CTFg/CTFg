@@ -1,0 +1,41 @@
+type Muatation {
+    register(name: String!, password: String!, email: String!, captcha: Captcha): RegisterOutput!
+    login(name: String!, password: String!, captcha: Captcha): LoginOutput!
+    logout: Boolean!
+    submit_flag(challenge_id: Int!, provided: String!): SubmitFlagOutput!
+    unlock(unlockable_id: Int!, unlockable_type: String!): UnlockOutput!
+    create_team(name: String!, secret: String!): CreateTeamOutput!
+    disband_team(team_id: Int!): Boolean!
+    generate_token: GenerateTokenOutput!
+
+}
+
+input Captcha {
+    Token: String!
+}
+
+type LoginOutput {
+    user_id: Int!
+    token: String!
+}
+
+type SubmitFlagOutput {
+    submission_id: Int
+}
+
+type UnlockOutput {
+    unlock_id: Int!
+}
+
+type RegisterOutput {
+    user_id: Int!
+    token: String!
+}
+
+type CreateTeamOutput {
+    team_id: Int!
+}
+
+type GenerateTokenOutput {
+    token_id: Int!
+}
